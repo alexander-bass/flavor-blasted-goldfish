@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -16,6 +17,7 @@ public class User {
     private double height;
     private List<Workout> workouts;
     private List<Workout> schedule;
+    private List<Exercise> exercises;
 
     public String getName() {
         return name;
@@ -65,8 +67,31 @@ public class User {
         this.schedule = schedule;
     }
 
+    public List<Exercise> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(List<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
     public void addWorkout(Workout workout) {
-        workouts.add(workout);
+        if (workouts == null) {
+            workouts = new ArrayList<>();
+            workouts.add(workout);
+        } else {
+            workouts.add(workout);
+        }
+    }
+
+    public void addExercise(Exercise exercise) {
+        if (exercises == null) {
+            exercises = new ArrayList<>();
+            exercises.add(exercise);
+        }
+        else {
+            exercises.add(exercise);
+        }
     }
 
     public User() {}

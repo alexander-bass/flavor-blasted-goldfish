@@ -1,5 +1,6 @@
 package fbg.fittrack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Workout {
@@ -31,9 +32,17 @@ public class Workout {
         this.completed = completed;
     }
 
-    public Workout(String name, List<Exercise> exercises, boolean completed) {
+    public Workout(String name) {
         this.name = name;
-        this.exercises = exercises;
-        this.completed = completed;
+    }
+
+    public void addExercise(Exercise exercise) {
+        if (exercises == null) {
+            exercises = new ArrayList<>();
+            exercises.add(exercise);
+        }
+        else {
+            exercises.add(exercise);
+        }
     }
 }

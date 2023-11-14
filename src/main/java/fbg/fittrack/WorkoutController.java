@@ -4,11 +4,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +24,18 @@ public class WorkoutController {
 
     @FXML
     protected void onNewWorkoutButtonClicked() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("workoutItem.fxml"));
-        AnchorPane workoutItem = fxmlLoader.load();
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newWorkout.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
+        NewWorkoutController nwc = fxmlLoader.getController();
+        nwc.createList(User.loadProfile(new File("userProfile.json")));
+
+        stage.setScene(scene);
+        stage.show();
+
+
+                /*
         int numRows = workoutGrid.getRowConstraints().size();
         int numCols = workoutGrid.getColumnConstraints().size();
 
@@ -34,7 +46,7 @@ public class WorkoutController {
                     return;
                 }
             }
-        }
+        } */
 
     }
 

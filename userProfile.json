@@ -1,6 +1,38 @@
 {
-  "name": "Alex",
-  "goal": "Big",
+  "name": "alex",
+  "goal": "yee",
   "weight": 1.0,
-  "height": 1.0
+  "height": 1.0,
+  "workouts": [
+    {
+      "name": "workout name",
+      "completed": false
+    },
+    {
+      "name": "",
+      "completed": false
+    },
+    {
+      "name": "leg day",
+      "completed": false
+    },
+    {
+      "name": "",
+      "completed": false
+    }
+  ],
+  "exercises": [
+    {
+      "name": "squat",
+      "sets": 2,
+      "reps": 5,
+      "weight": 150.0
+    },
+    {
+      "name": "a",
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
+    }
+  ]
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fbg.fittrack.NewWorkoutController">
+   <children>
+      <TextField fx:id="nameTextField" layoutX="219.0" layoutY="46.0" promptText="Workout name..." />
+      <Button fx:id="okButton" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#onOkButtonClick" text="Ok" />
+      <Button fx:id="addExerciseButton" layoutX="490.0" layoutY="357.0" mnemonicParsing="false" onAction="#onAddExerciseButton" text="Add exercise" />
+      <ScrollPane layoutX="50.0" layoutY="89.0" prefHeight="225.0" prefWidth="500.0">
+         <content>
+            <VBox fx:id="exerciseList" prefWidth="490.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
