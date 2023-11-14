@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class WorkoutController {
     @FXML
     protected void onNewWorkoutButtonClicked() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("workoutItem.fxml"));
-        Node workoutItem = fxmlLoader.load();
+        AnchorPane workoutItem = fxmlLoader.load();
 
         int numRows = workoutGrid.getRowConstraints().size();
         int numCols = workoutGrid.getColumnConstraints().size();

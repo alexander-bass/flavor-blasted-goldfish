@@ -113,6 +113,13 @@
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="contentArea" layoutX="200.0" prefHeight="600.0" prefWidth="800.0" />
+      <AnchorPane fx:id="contentArea" layoutX="200.0" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Label fx:id="welcomeLabel" layoutX="162.0" layoutY="268.0" text="Hi" textFill="WHITE">
+               <font>
+                  <Font name="Cantarell Regular" size="51.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
    </children>
 </AnchorPane>

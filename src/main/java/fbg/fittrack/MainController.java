@@ -25,6 +25,9 @@ public class MainController {
     private Button settingsButton;
     @FXML
     private AnchorPane contentArea;
+    @FXML
+    private Label welcomeLabel;
+
 
     @FXML
     protected void onHomeButtonClick() throws IOException {
@@ -58,5 +61,9 @@ public class MainController {
     protected void onSettingsButtonClick() {
         // display settings popup
         settingsButton.getContextMenu().show(settingsButton, Side.BOTTOM, 0, 0);
+    }
+
+    public void initialize(User user) {
+        welcomeLabel.setText("Welcome " + user.getName());
     }
 }
