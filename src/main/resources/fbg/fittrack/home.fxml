@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #454545;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #454545;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fbg.fittrack.HomeController">
    <children>
-      <Label layoutX="247.0" layoutY="260.0" text="This is the home page." textFill="WHITE">
+      <Label fx:id="homeLabel" layoutX="247.0" layoutY="260.0" text="This is the home page." textFill="WHITE">
          <font>
             <Font name="Cantarell Regular" size="31.0" />
          </font>

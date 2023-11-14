@@ -37,6 +37,8 @@ public class WorkoutController {
         }
 
     }
+
+    // all of this stuff might be unnecessary, was just testing some stuff
     private boolean isCellEmpty(int row, int col) {
 
         for (Node child : workoutGrid.getChildren()) {
@@ -76,6 +78,10 @@ public class WorkoutController {
             Label label = new Label(state.content()); // Create a new node with the saved content
             workoutGrid.add(label, state.column(), state.row());
         }
+    }
+
+    public void initialize(User user) {
+
     }
 
 

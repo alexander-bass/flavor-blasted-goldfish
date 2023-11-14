@@ -19,4 +19,8 @@ public class ScheduleController {
     @FXML
     private VBox saturdayPanel;
 
+    public void initialize(User user) {
+
+    }
+
 }

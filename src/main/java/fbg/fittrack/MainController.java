@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class MainController {
@@ -34,6 +35,8 @@ public class MainController {
         // display home page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));
         Parent homeContent = fxmlLoader.load();
+        HomeController hc = fxmlLoader.getController();
+        hc.initialize(User.loadProfile(new File("userProfile.json")));
         contentArea.getChildren().setAll(homeContent);
     }
     @FXML
@@ -41,6 +44,8 @@ public class MainController {
         // display schedule page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("schedule.fxml"));
         Parent scheduleContent = fxmlLoader.load();
+        ScheduleController sc = fxmlLoader.getController();
+        sc.initialize(User.loadProfile(new File("userProfile.json")));
         contentArea.getChildren().setAll(scheduleContent);
     }
     @FXML
@@ -48,6 +53,8 @@ public class MainController {
         // display workout page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("workout.fxml"));
         Parent workoutContent = fxmlLoader.load();
+        WorkoutController wc = fxmlLoader.getController();
+        wc.initialize(User.loadProfile(new File("userProfile.json")));
         contentArea.getChildren().setAll(workoutContent);
     }
     @FXML
@@ -55,6 +62,9 @@ public class MainController {
         // display progress page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("progress.fxml"));
         Parent progressContent = fxmlLoader.load();
+
+        // progress page initialize
+
         contentArea.getChildren().setAll(progressContent);
     }
     @FXML
