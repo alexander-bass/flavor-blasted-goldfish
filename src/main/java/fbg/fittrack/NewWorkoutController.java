@@ -53,16 +53,18 @@ public class NewWorkoutController {
     }
 
     public void createList(User user) throws IOException {
-        for (Exercise exercise : user.getExercises()) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("exerciseItem.fxml"));
-            Node exerciseItem = loader.load();
-            checkBoxList.add((CheckBox) exerciseItem);
+        if (user.getExercises() != null) {
+            for (Exercise exercise : user.getExercises()) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("exerciseItem.fxml"));
+                Node exerciseItem = loader.load();
 
-            ExerciseItemController eic = loader.getController();
-            eic.setExerciseInfo(exercise);
-            eic.getExerciseInfo().setUserData(exercise);
+                ExerciseItemController eic = loader.getController();
+                eic.setExerciseInfo(exercise);
+                eic.getExerciseInfo().setUserData(exercise);
+                checkBoxList.add(eic.getExerciseInfo());
 
-            exerciseList.getChildren().add(exerciseItem);
+                exerciseList.getChildren().add(exerciseItem);
+            }
         }
     }
 }

@@ -41,20 +41,23 @@ public class WorkoutController {
         int numCols = workoutGrid.getColumnConstraints().size();
         int index = 0;
 
-        for (Workout workout : user.getWorkouts()) {
-            int row = index/numCols;
-            int column = index%numCols;
+        if (user.getWorkouts() != null) {
+            for (Workout workout : user.getWorkouts()) {
+                int row = index/numCols;
+                int column = index%numCols;
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("workoutItem.fxml"));
-            Node workoutItem = loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("workoutItem.fxml"));
+                Node workoutItem = loader.load();
 
-            WorkoutItemController wic = loader.getController();
-            wic.setWorkoutNameLabel(workout);
+                WorkoutItemController wic = loader.getController();
+                wic.setWorkoutNameLabel(workout);
 
-            workoutGrid.add(workoutItem, column, row);
-            index++;
+                workoutGrid.add(workoutItem, column, row);
+                index++;
+            }
         }
-    }
+        }
+
 
 
 }

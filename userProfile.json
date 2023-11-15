@@ -1,43 +1,25 @@
 {
-  "name": "alex",
-  "goal": "yee",
+  "name": "Alex Bass",
+  "goal": "Big Strong",
   "weight": 1.0,
   "height": 1.0,
   "workouts": [
     {
-      "name": "workout name",
-      "completed": false
-    },
-    {
-      "name": "",
-      "completed": false
-    },
-    {
-      "name": "leg day",
-      "completed": false
-    },
-    {
-      "name": "",
-      "completed": false
-    },
-    {
-      "name": "",
-      "completed": false
-    },
-    {
-      "name": "leg day",
-      "completed": false
-    },
-    {
-      "name": "butt",
-      "completed": false
-    },
-    {
-      "name": "nutt",
-      "completed": false
-    },
-    {
-      "name": "",
+      "name": "big strong workout",
+      "exercises": [
+        {
+          "name": "squat",
+          "sets": 2,
+          "reps": 5,
+          "weight": 1.0E8
+        },
+        {
+          "name": "deadlift",
+          "sets": 2,
+          "reps": 5,
+          "weight": 2000000.0
+        }
+      ],
       "completed": false
     }
   ],
@@ -46,25 +28,13 @@
       "name": "squat",
       "sets": 2,
       "reps": 5,
-      "weight": 150.0
+      "weight": 1.0E8
     },
     {
-      "name": "a",
-      "sets": 1,
-      "reps": 1,
-      "weight": 1.0
-    },
-    {
-      "name": "wee",
-      "sets": 69,
-      "reps": 420,
-      "weight": 1000000.0
-    },
-    {
-      "name": "timmy toss",
-      "sets": 1,
-      "reps": 10,
-      "weight": 200.0
+      "name": "deadlift",
+      "sets": 2,
+      "reps": 5,
+      "weight": 2000000.0
     }
   ]
 }
