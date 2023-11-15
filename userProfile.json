@@ -19,6 +19,26 @@
     {
       "name": "",
       "completed": false
+    },
+    {
+      "name": "",
+      "completed": false
+    },
+    {
+      "name": "leg day",
+      "completed": false
+    },
+    {
+      "name": "butt",
+      "completed": false
+    },
+    {
+      "name": "nutt",
+      "completed": false
+    },
+    {
+      "name": "",
+      "completed": false
     }
   ],
   "exercises": [
@@ -33,6 +53,18 @@
       "sets": 1,
       "reps": 1,
       "weight": 1.0
+    },
+    {
+      "name": "wee",
+      "sets": 69,
+      "reps": 420,
+      "weight": 1000000.0
+    },
+    {
+      "name": "timmy toss",
+      "sets": 1,
+      "reps": 10,
+      "weight": 200.0
     }
   ]
 }

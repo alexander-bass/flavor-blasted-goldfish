@@ -11,4 +11,8 @@ public class ExerciseItemController {
     public void setExerciseInfo(Exercise exercise) {
         exerciseInfo.setText(exercise.getName() + ": " + exercise.getSets() + "x" + exercise.getReps() + ", " + exercise.getWeight() + "lbs");
     }
+
+    public CheckBox getExerciseInfo() {
+        return exerciseInfo;
+    }
 }

@@ -34,66 +34,26 @@ public class WorkoutController {
         stage.setScene(scene);
         stage.show();
 
+    }
 
-                /*
+    public void initialize(User user) throws IOException {
         int numRows = workoutGrid.getRowConstraints().size();
         int numCols = workoutGrid.getColumnConstraints().size();
+        int index = 0;
 
-        for (int i = 0; i < numRows; i++) {
-            for (int j = 0; j < numCols; j++) {
-                if (isCellEmpty(i, j)) {
-                    workoutGrid.add(workoutItem, j, i);
-                    return;
-                }
-            }
-        } */
+        for (Workout workout : user.getWorkouts()) {
+            int row = index/numCols;
+            int column = index%numCols;
 
-    }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("workoutItem.fxml"));
+            Node workoutItem = loader.load();
 
-    // all of this stuff might be unnecessary, was just testing some stuff
-    private boolean isCellEmpty(int row, int col) {
+            WorkoutItemController wic = loader.getController();
+            wic.setWorkoutNameLabel(workout);
 
-        for (Node child : workoutGrid.getChildren()) {
-            if (!child.isVisible() || !child.isManaged()) {
-                continue;
-            }
-            // Get row and column index, treat null as 0
-            Integer rowIndex = GridPane.getRowIndex(child);
-            int childRow = (rowIndex == null) ? 0 : rowIndex;
-
-            Integer colIndex = GridPane.getColumnIndex(child);
-            int childCol = (colIndex == null) ? 0 : colIndex;
-
-            // Check if the current cell is occupied
-            if (childRow == row && childCol == col) {
-                return false; // This cell is not empty
-            }
+            workoutGrid.add(workoutItem, column, row);
+            index++;
         }
-        return true; // This cell is empty
-    }
-
-    private List<GridPaneState> saveGridPaneState() {
-        List<GridPaneState> stateList = new ArrayList<>();
-        for (Node child : workoutGrid.getChildren()) {
-            int row = GridPane.getRowIndex(child) != null ? GridPane.getRowIndex(child) : 0;
-            int col = GridPane.getColumnIndex(child) != null ? GridPane.getColumnIndex(child) : 0;
-            String content = ((Label)child).getText(); // Assuming the content is a Label, adapt as needed
-
-            stateList.add(new GridPaneState(row, col, content));
-        }
-        return stateList;
-    }
-
-    void restoreGridPaneState(List<GridPaneState> stateList) {
-        // workoutGrid.getChildren().clear();
-        for (GridPaneState state : stateList) {
-            Label label = new Label(state.content()); // Create a new node with the saved content
-            workoutGrid.add(label, state.column(), state.row());
-        }
-    }
-
-    public void initialize(User user) {
-
     }
 
 

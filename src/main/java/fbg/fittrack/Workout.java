@@ -32,8 +32,9 @@ public class Workout {
         this.completed = completed;
     }
 
-    public Workout(String name) {
+    public Workout(String name, List<Exercise> exercises) {
         this.name = name;
+        this.exercises = exercises;
     }
 
     public void addExercise(Exercise exercise) {
