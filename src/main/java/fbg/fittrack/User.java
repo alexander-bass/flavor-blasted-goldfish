@@ -15,9 +15,9 @@ public class User {
     private String goal;
     private double weight;
     private double height;
-    private List<Workout> workouts;
-    private List<Workout> schedule;
-    private List<Exercise> exercises;
+    private List<Workout> workouts = new ArrayList<>();
+    private List<Workout> schedule = new ArrayList<>();
+    private List<Exercise> exercises = new ArrayList<>();
 
     public String getName() {
         return name;

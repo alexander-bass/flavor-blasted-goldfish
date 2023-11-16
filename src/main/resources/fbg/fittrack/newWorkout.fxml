@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fbg.fittrack.NewWorkoutController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fbg.fittrack.NewWorkoutController">
    <children>
-      <TextField fx:id="nameTextField" layoutX="219.0" layoutY="46.0" promptText="Workout name..." />
-      <Button fx:id="okButton" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#onOkButtonClick" text="Ok" />
-      <Button fx:id="addExerciseButton" layoutX="490.0" layoutY="357.0" mnemonicParsing="false" onAction="#onAddExerciseButton" text="Add exercise" />
-      <ScrollPane layoutX="50.0" layoutY="89.0" prefHeight="225.0" prefWidth="500.0">
+      <TextField fx:id="nameTextField" layoutX="219.0" layoutY="46.0" prefHeight="25.0" prefWidth="150.0" promptText="Workout name..." />
+      <Button fx:id="okButton" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#onOkButtonClick" prefHeight="25.0" prefWidth="50.0" text="Ok" />
+      <Button fx:id="addExerciseButton" layoutX="475.0" layoutY="357.0" mnemonicParsing="false" onAction="#onAddExerciseButton" prefHeight="25.0" prefWidth="100.0" text="Add exercise" />
+      <ScrollPane layoutX="50.0" layoutY="89.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="500.0">
          <content>
-            <VBox fx:id="exerciseList" prefWidth="490.0" />
+            <VBox fx:id="exerciseList" prefWidth="484.0" />
          </content>
       </ScrollPane>
    </children>

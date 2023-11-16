@@ -26,7 +26,7 @@ public class NewProfileController {
     private Button saveButton;
 
     @FXML
-    protected void onSaveButtonClick() {
+    protected void onSaveButtonClick() throws Exception {
         User user = new User();
         user.setName(nameTextField.getText());
         user.setGoal(goalTextField.getText());
@@ -35,6 +35,8 @@ public class NewProfileController {
         user.saveProfile();
         Stage stage = (Stage) saveButton.getScene().getWindow();
         stage.close();
+        Main.restart();
+
     }
 
 

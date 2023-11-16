@@ -1,9 +1,9 @@
 package fbg.fittrack;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -21,13 +21,20 @@ public class NewExerciseController {
     private TextField setsTextField;
     @FXML
     private TextField weightTextField;
+    private ObservableList<Exercise> exerciseObservableList;
+
+    public void setExercisesList(ObservableList<Exercise> exercises) {
+        this.exerciseObservableList = exercises;
+    }
 
 
     @FXML
     protected void onOkButtonClick() {
         User user = User.loadProfile(new File("userProfile.json"));
-        user.addExercise(new Exercise(nameTextField.getText(), Integer.parseInt(setsTextField.getText()), Integer.parseInt(repsTextField.getText()), Double.parseDouble(weightTextField.getText())));
+        Exercise newExercise = new Exercise(nameTextField.getText(), Integer.parseInt(setsTextField.getText()), Integer.parseInt(repsTextField.getText()), Double.parseDouble(weightTextField.getText()));
+        user.addExercise(newExercise);
         user.saveProfile();
+        exerciseObservableList.add(newExercise);
         Stage stage = (Stage) okButton.getScene().getWindow();
         stage.close();
     }

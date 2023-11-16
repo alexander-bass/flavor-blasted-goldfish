@@ -1,16 +1,11 @@
 package fbg.fittrack;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 
 
 public class Main extends Application {
@@ -34,6 +29,10 @@ public class Main extends Application {
             Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
             MainController mc = fxmlLoader.getController();
             mc.initialize(user);
+
+            stage.setMinWidth(1000);
+            stage.setMinHeight(625);
+
             stage.setScene(scene);
             stage.show();
         }
@@ -41,4 +40,8 @@ public class Main extends Application {
 
 
     public static void main(String[] args) { launch(); }
+
+    public static void restart() throws Exception {
+        new Main().start(new Stage());
+    }
 }
