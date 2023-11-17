@@ -2,11 +2,23 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fbg.fittrack.ExerciseItemController">
    <children>
       <CheckBox fx:id="exerciseInfo" layoutX="33.0" layoutY="16.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="394.0" text="Name: SetsxReps, Weight" />
-      <Button layoutX="427.0" layoutY="12.0" mnemonicParsing="false" text="..." />
+      <Button fx:id="exerciseSettingsButton" layoutX="427.0" layoutY="12.0" mnemonicParsing="false" onAction="#onExerciseSettingsButtonClick" text="...">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Edit" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu></Button>
    </children>
 </AnchorPane>

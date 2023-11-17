@@ -29,10 +29,6 @@ public class Main extends Application {
             Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
             MainController mc = fxmlLoader.getController();
             mc.initialize(user);
-
-            stage.setMinWidth(1000);
-            stage.setMinHeight(625);
-
             stage.setScene(scene);
             stage.show();
         }
