@@ -16,7 +16,6 @@ public class Main extends Application {
         File userProfile = new File("userProfile.json");
         if(!userProfile.exists()) {
             // prompt user for information
-            // this should reboot the program once saved, but currently just exits
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newProfile.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             stage.setScene(scene);
@@ -29,6 +28,9 @@ public class Main extends Application {
             Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
             MainController mc = fxmlLoader.getController();
             mc.initialize(user);
+            stage.setMinWidth(1000);
+            stage.setMinHeight(600);
+
             stage.setScene(scene);
             stage.show();
         }

@@ -1,10 +1,13 @@
 package fbg.fittrack;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+
+import java.io.File;
 
 public class WorkoutItemController {
     @FXML
@@ -16,8 +19,15 @@ public class WorkoutItemController {
     @FXML
     private MenuItem deleteMenuItem;
 
+    private Workout workout;
+    private ObservableList<Workout> workoutObservableList;
+
     public void setWorkoutNameLabel(Workout workout) {
         workoutNameLabel.setText(workout.getName());
+    }
+
+    public void setWorkoutList(ObservableList<Workout> workouts) {
+        this.workoutObservableList = workouts;
     }
 
     @FXML
@@ -35,6 +45,16 @@ public class WorkoutItemController {
         // remove from user exercise list
         // remove observable list
         // remove from checkbox list
+        User user = User.loadProfile(new File("userProfile.json"));
+        user.removeWorkout(workout);
+        user.saveProfile();
+
+        workoutObservableList.remove(workout);
+
+    }
+
+    public void setWorkout(Workout workout) {
+        this.workout = workout;
     }
 
 }

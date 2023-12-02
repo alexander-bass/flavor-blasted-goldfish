@@ -1,0 +1,53 @@
+{
+  "name": "a",
+  "goal": "a",
+  "weight": 1.0,
+  "height": 1.0,
+  "workouts": [
+    {
+      "name": "ab",
+      "exercises": [
+        {
+          "name": "a",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        },
+        {
+          "name": "b",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false
+    },
+    {
+      "name": "avv",
+      "exercises": [
+        {
+          "name": "c",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false
+    }
+  ],
+  "schedule": [],
+  "exercises": [
+    {
+      "name": "a",
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
+    },
+    {
+      "name": "c",
+      "sets": 2,
+      "reps": 1,
+      "weight": 1.0
+    }
+  ]
+}

@@ -63,6 +63,13 @@ public class WorkoutController {
                         }
                     }
                     // Handle other types of changes if necessary (e.g., removals)
+                    if (c.wasRemoved()) {
+                        for (Workout removedWorkout : c.getRemoved()) {
+                            // Handle the removal of each removed exercise
+                            removeWorkoutFromGrid(removedWorkout);
+                            lastIndex--;
+                        }
+                    }
                 }
             });
 
@@ -76,11 +83,48 @@ public class WorkoutController {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("workoutItem.fxml"));
         Node workoutItem = loader.load();
+        workoutItem.setUserData(workout);
 
         WorkoutItemController wic = loader.getController();
         wic.setWorkoutNameLabel(workout);
+        wic.setWorkout(workout);
+        wic.setWorkoutList(workoutObservableList);
 
         workoutGrid.add(workoutItem, column, row);
+    }
+
+    private void removeWorkoutFromGrid(Workout workout) {
+        for (Node child : workoutGrid.getChildren()) {
+            if (child.getUserData() == workout) {
+                workoutGrid.getChildren().remove(child);
+                reorderGrid(child);
+                break;
+            }
+        }
+    }
+
+    private void reorderGrid(Node removed) {
+        int maxColumns = workoutGrid.getColumnConstraints().size();
+        int rowIndex = GridPane.getRowIndex(removed);
+        int colIndex = GridPane.getColumnIndex(removed);
+        for (Node node : workoutGrid.getChildren()) {
+            int currentRow = GridPane.getRowIndex(node);
+            int currentCol = GridPane.getColumnIndex(node);
+
+            // Check if the node is after the removed item
+            if (currentRow >= rowIndex && currentCol > colIndex) {
+                // Shift to the left
+                if (currentCol == 0) {
+                    // Move to the previous row's last position if it's the first column
+                    GridPane.setRowIndex(node, currentRow - 1);
+                    GridPane.setColumnIndex(node, maxColumns - 1);
+                } else {
+                    // Move to the previous column
+                    GridPane.setColumnIndex(node, currentCol - 1);
+                }
+            }
+
+        }
     }
 
 }

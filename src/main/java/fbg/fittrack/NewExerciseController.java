@@ -32,6 +32,13 @@ public class NewExerciseController {
     protected void onOkButtonClick() {
         User user = User.loadProfile(new File("userProfile.json"));
         Exercise newExercise = new Exercise(nameTextField.getText(), Integer.parseInt(setsTextField.getText()), Integer.parseInt(repsTextField.getText()), Double.parseDouble(weightTextField.getText()));
+        for (Exercise exercise : exerciseObservableList) {
+            if (exercise.getName().equals(newExercise.getName())) {
+                user.removeExercise(exercise);
+                exerciseObservableList.remove(exercise);
+                break;
+            }
+        }
         user.addExercise(newExercise);
         user.saveProfile();
         exerciseObservableList.add(newExercise);
@@ -43,6 +50,13 @@ public class NewExerciseController {
     protected void onCancelButtonClick(){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void setTextFields(Exercise exercise) {
+        nameTextField.setText(exercise.getName());
+        repsTextField.setText(String.valueOf(exercise.getReps()));
+        setsTextField.setText(String.valueOf(exercise.getSets()));
+        weightTextField.setText(String.valueOf(exercise.getWeight()));
     }
 
 }

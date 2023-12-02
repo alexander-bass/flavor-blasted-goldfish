@@ -14,9 +14,9 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                  <MenuItem mnemonicParsing="false" text="Edit" />
+                  <MenuItem fx:id="editMenuItem" mnemonicParsing="false" onAction="#onEditMenuItemClick" text="Edit" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#onDeleteMenuItemClick" text="Delete" />
               </items>
             </ContextMenu>
          </contextMenu></Button>

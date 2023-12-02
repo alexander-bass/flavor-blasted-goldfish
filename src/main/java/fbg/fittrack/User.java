@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class User {
     private String name;
@@ -84,6 +85,10 @@ public class User {
         }
     }
 
+    public void removeWorkout(Workout workout) {
+        workouts.removeIf(e -> Objects.equals(e.getName(), workout.getName()));
+    }
+
     public void addExercise(Exercise exercise) {
         if (exercises == null) {
             exercises = new ArrayList<>();
@@ -92,6 +97,10 @@ public class User {
         else {
             exercises.add(exercise);
         }
+    }
+
+    public void removeExercise(Exercise exercise) {
+        exercises.removeIf(e -> Objects.equals(e.getName(), exercise.getName()));
     }
 
     public User() {}

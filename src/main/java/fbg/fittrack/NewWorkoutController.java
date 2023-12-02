@@ -30,6 +30,7 @@ public class NewWorkoutController {
     private final ObservableList<Exercise> exerciseObservableList = FXCollections.observableArrayList();
     private ObservableList<Workout> workoutObservableList;
 
+
     @FXML
     protected void onOkButtonClick() {
         User user = User.loadProfile(new File("userProfile.json"));
@@ -69,37 +70,65 @@ public class NewWorkoutController {
                 exerciseObservableList.add(exercise);
                 addExerciseToVBox(exercise);
             }
+        }
 
-            // Listener for changes in the exercises list
-            exerciseObservableList.addListener((ListChangeListener.Change<? extends Exercise> c) -> {
-                while (c.next()) {
-                    if (c.wasAdded()) {
-                        for (Exercise newExercise : c.getAddedSubList()) {
-                            try {
-                                addExerciseToVBox(newExercise);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
+        // Listener for changes in the exercises list
+        exerciseObservableList.addListener((ListChangeListener.Change<? extends Exercise> c) -> {
+            while (c.next()) {
+                if (c.wasAdded()) {
+                    for (Exercise newExercise : c.getAddedSubList()) {
+                        try {
+                            addExerciseToVBox(newExercise);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
                         }
                     }
-                    // Handle other types of changes if necessary (e.g., removals)
                 }
-            });
-        }
+                if (c.wasRemoved()) {
+                    for (Exercise removedExercise : c.getRemoved()) {
+                        // Handle the removal of each removed exercise
+                        try {
+                            removeExerciseFromVBox(removedExercise);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }
+                // Handle other types of changes if necessary (e.g., removals)
+            }
+        });
+
     }
 
     private void addExerciseToVBox (Exercise exercise) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("exerciseItem.fxml"));
         Node exerciseItem = loader.load();
+        exerciseItem.setUserData(exercise);
 
         ExerciseItemController eic = loader.getController();
+        eic.setExercise(exercise);
         eic.setExerciseInfo(exercise);
+        eic.setExercisesList(exerciseObservableList);
         eic.getExerciseInfo().setUserData(exercise);
         checkBoxList.add(eic.getExerciseInfo());
         exerciseList.getChildren().add(exerciseItem);
     }
 
+    private void removeExerciseFromVBox (Exercise exercise) throws IOException {
+        for (Node child : exerciseList.getChildren()) {
+            if (child.getUserData() == exercise) {
+                exerciseList.getChildren().remove(child);
+                break;
+            }
+        }
+
+    }
+
     public void setWorkoutObservableList(ObservableList<Workout> workouts) {
         this.workoutObservableList = workouts;
     }
+
+    public ObservableList<Exercise> getExerciseObservableList() { return  exerciseObservableList; }
+
+
 }
