@@ -8,7 +8,7 @@ public class HomeController {
     private Label homeLabel;
 
 
-    public void initialize(User user) { homeLabel.setText("Name: " + user.getName()); }
+    public void initialize(User user) { homeLabel.setText("Name: " + user.getName() + " Weight: " + user.getWeight() + " Height: " + user.getHeight()); }
 
 
 }
