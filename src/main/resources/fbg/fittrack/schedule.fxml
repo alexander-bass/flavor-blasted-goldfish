@@ -131,7 +131,7 @@
             <Insets top="20.0" />
          </padding>
       </VBox>
-      <Button fx:id="scheduleSettingsButton" layoutX="599.0" layoutY="535.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #878787;" text="Schedule Settings">
+      <Button layoutX="599.0" layoutY="535.0" mnemonicParsing="false" onAction="#onScheduleSettingsButtonClick" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #878787;" text="Schedule Settings">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>

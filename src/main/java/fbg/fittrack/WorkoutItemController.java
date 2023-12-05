@@ -21,6 +21,7 @@ public class WorkoutItemController {
 
     private Workout workout;
     private ObservableList<Workout> workoutObservableList;
+    private ObservableList<Workout> scheduleObservableList;
 
     public void setWorkoutNameLabel(Workout workout) {
         workoutNameLabel.setText(workout.getName());
@@ -28,6 +29,9 @@ public class WorkoutItemController {
 
     public void setWorkoutList(ObservableList<Workout> workouts) {
         this.workoutObservableList = workouts;
+    }
+    public void setScheduleObservableList(ObservableList<Workout> workouts) {
+        this.scheduleObservableList = workouts;
     }
 
     @FXML
@@ -47,9 +51,15 @@ public class WorkoutItemController {
         // remove from checkbox list
         User user = User.loadProfile(new File("userProfile.json"));
         user.removeWorkout(workout);
+        user.removeFromSchedule(workout);
         user.saveProfile();
 
-        workoutObservableList.remove(workout);
+        if (workoutObservableList != null) {
+            workoutObservableList.remove(workout);
+        }
+        if (scheduleObservableList != null) {
+            scheduleObservableList.remove(workout);
+        }
 
     }
 

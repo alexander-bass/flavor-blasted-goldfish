@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fbg.fittrack.NewScheduleController">
+   <children>
+      <Button fx:id="okButton" layoutX="275.0" layoutY="360.0" mnemonicParsing="false" onAction="#onOKButtonClick" prefHeight="25.0" prefWidth="50.0" text="Ok" />
+      <ScrollPane layoutX="50.0" layoutY="47.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="500.0">
+         <content>
+            <VBox fx:id="workoutList" prefWidth="484.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

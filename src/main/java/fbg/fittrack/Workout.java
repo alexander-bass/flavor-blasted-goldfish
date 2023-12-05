@@ -7,6 +7,7 @@ public class Workout {
     private String name;
     private List<Exercise> exercises;
     private boolean completed;
+    private String day;
 
     public String getName() {
         return name;
@@ -31,6 +32,9 @@ public class Workout {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+    public void setDay(String day) { this.day = day; }
+    public String getDay() { return day; }
 
     public Workout(String name, List<Exercise> exercises) {
         this.name = name;

@@ -103,6 +103,11 @@ public class User {
         exercises.removeIf(e -> Objects.equals(e.getName(), exercise.getName()));
     }
 
+    public void addToSchedule(Workout workout) {
+        schedule.add(workout);
+    }
+    public void removeFromSchedule(Workout workout) { schedule.removeIf(e -> Objects.equals(e.getName(), workout.getName())); }
+
     public User() {}
     public User(String name, String goal, double weight, double height) {
         this.name = name;
