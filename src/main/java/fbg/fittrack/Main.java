@@ -11,7 +11,6 @@ import java.io.File;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-
         // check for a user profile, if none is found, prompt to create.
         File userProfile = new File("userProfile.json");
         if(!userProfile.exists()) {

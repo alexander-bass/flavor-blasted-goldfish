@@ -6,6 +6,11 @@ public class Exercise {
     private int reps;
     private double weight;
 
+    @Override
+    public String toString() {
+        return name + ": " + sets + "x" + reps + ", " + weight + "lbs";
+    }
+
     public String getName() {
         return name;
     }

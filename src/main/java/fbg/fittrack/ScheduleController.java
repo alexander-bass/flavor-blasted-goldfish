@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -97,6 +98,7 @@ public class ScheduleController {
         workoutItem.setUserData(workout);
 
         WorkoutItemController wic = loader.getController();
+        wic.hideMenuItems();
         wic.setWorkoutNameLabel(workout);
         wic.setWorkout(workout);
         wic.setScheduleObservableList(scheduleObservableList);

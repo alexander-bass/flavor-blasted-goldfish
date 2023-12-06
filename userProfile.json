@@ -1,46 +1,140 @@
 {
   "name": "Alex Bass",
-  "goal": "Get Buff!!!!!",
+  "goal": "Get buff",
   "weight": 150.0,
-  "height": 5.1,
-  "workouts": [],
-  "schedule": [],
+  "height": 6.1,
+  "workouts": [
+    {
+      "name": "legs",
+      "exercises": [
+        {
+          "name": "squat",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        },
+        {
+          "name": "leg press",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false
+    },
+    {
+      "name": "back",
+      "exercises": [
+        {
+          "name": "deadlift",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        },
+        {
+          "name": "pullup",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false
+    },
+    {
+      "name": "b",
+      "exercises": [
+        {
+          "name": "bench",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        },
+        {
+          "name": "pushup",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false
+    }
+  ],
+  "schedule": [
+    {
+      "name": "legs",
+      "exercises": [
+        {
+          "name": "squat",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        },
+        {
+          "name": "leg press",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false,
+      "day": "Monday"
+    },
+    {
+      "name": "back",
+      "exercises": [
+        {
+          "name": "deadlift",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        },
+        {
+          "name": "pullup",
+          "sets": 1,
+          "reps": 1,
+          "weight": 1.0
+        }
+      ],
+      "completed": false,
+      "day": "Wednesday"
+    }
+  ],
   "exercises": [
     {
       "name": "squat",
-      "sets": 3,
-      "reps": 5,
-      "weight": 130.0
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
     },
     {
       "name": "leg press",
-      "sets": 3,
-      "reps": 4,
-      "weight": 160.0
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
     },
     {
       "name": "bench",
-      "sets": 3,
-      "reps": 6,
-      "weight": 125.0
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
     },
     {
-      "name": "push ups",
-      "sets": 4,
-      "reps": 10,
-      "weight": 150.0
+      "name": "pushup",
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
     },
     {
       "name": "deadlift",
-      "sets": 2,
-      "reps": 5,
-      "weight": 200.0
+      "sets": 1,
+      "reps": 1,
+      "weight": 1.0
     },
     {
-      "name": "pull ups",
-      "sets": 2,
-      "reps": 10,
-      "weight": 150.0
+      "name": "pullup",
+      "sets": 1,
+      "reps": 1,
+      "weight": 2.0
     }
   ]
 }

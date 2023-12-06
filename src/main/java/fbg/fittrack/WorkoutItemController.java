@@ -1,13 +1,19 @@
 package fbg.fittrack;
 
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 
 public class WorkoutItemController {
     @FXML
@@ -18,10 +24,19 @@ public class WorkoutItemController {
     private MenuItem editMenuItem;
     @FXML
     private MenuItem deleteMenuItem;
+    @FXML
+    private MenuItem removeMenuItem;
+    @FXML
+    private MenuItem viewMenuItem;
 
     private Workout workout;
     private ObservableList<Workout> workoutObservableList;
     private ObservableList<Workout> scheduleObservableList;
+    public void hideMenuItems() {
+        editMenuItem.setVisible(false);
+        deleteMenuItem.setVisible(false);
+        removeMenuItem.setVisible(true);
+    }
 
     public void setWorkoutNameLabel(Workout workout) {
         workoutNameLabel.setText(workout.getName());
@@ -66,5 +81,33 @@ public class WorkoutItemController {
     public void setWorkout(Workout workout) {
         this.workout = workout;
     }
+
+    @FXML
+    protected void onRemoveMenuItemClick(){
+        User user = User.loadProfile(new File("userProfile.json"));
+        user.removeFromSchedule(workout);
+        user.saveProfile();
+
+        if (scheduleObservableList != null) {
+            scheduleObservableList.remove(workout);
+        }
+
+    }
+
+    @FXML
+    protected void onViewMenuItemClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("workoutView.fxml"));
+        Parent root = loader.load();
+
+        WorkoutViewController wvc = loader.getController();
+        wvc.initialize(workout);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setMinHeight(275);
+        stage.setMinWidth(250);
+        stage.show();
+
+    }
+
 
 }

@@ -19,14 +19,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel1" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel1" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="03" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="7.0" right="7.0" top="20.0" />
          </padding>
       </VBox>
       <VBox fx:id="mondayPanel" layoutX="115.0" prefHeight="500.0" prefWidth="114.0">
@@ -36,14 +36,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel11" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel11" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="04" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="7.0" right="7.0" top="20.0" />
          </padding>
       </VBox>
       <VBox fx:id="tuesdayPanel" layoutX="229.0" prefHeight="500.0" prefWidth="114.0">
@@ -53,14 +53,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="05" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
          </padding>
       </VBox>
       <VBox fx:id="wednesdayPanel" layoutX="344.0" prefHeight="500.0" prefWidth="114.0">
@@ -70,14 +70,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel1111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel1111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="06" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
          </padding>
       </VBox>
       <VBox fx:id="thursdayPanel" layoutX="458.0" prefHeight="500.0" prefWidth="114.0">
@@ -87,14 +87,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel11111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel11111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="07" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
          </padding>
       </VBox>
       <VBox fx:id="fridayPanel" layoutX="572.0" prefHeight="500.0" prefWidth="114.0">
@@ -104,14 +104,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel111111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel111111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="08" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
          </padding>
       </VBox>
       <VBox fx:id="saturdayPanel" layoutX="686.0" prefHeight="500.0" prefWidth="114.0">
@@ -121,14 +121,14 @@
                   <Font name="Cantarell Regular" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="dayLabel1111111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="#" textFill="WHITE">
+            <Label fx:id="dayLabel1111111" alignment="CENTER" prefHeight="47.0" prefWidth="114.0" text="09" textFill="WHITE">
                <font>
                   <Font name="Cantarell Regular" size="36.0" />
                </font>
             </Label>
          </children>
          <padding>
-            <Insets top="20.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
          </padding>
       </VBox>
       <Button layoutX="599.0" layoutY="535.0" mnemonicParsing="false" onAction="#onScheduleSettingsButtonClick" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #878787;" text="Schedule Settings">
